@@ -20,7 +20,7 @@ NullPointerException is not welcome. It should not be caught. I should not appea
 
 *Hint: you may add methods to the RiskyShot class*
 
-### Risky class
+### Risky resource
 Handle a risky method call in handleCarelessConsuming method in the [RiskyResource](src/main/java/com/efimchick/tasks/risky/RiskyResource.java) class.\
 No special error handling is required, just do not let any Exception get out of the method scope.
 Important part here is resource - it should be closed in any case.
