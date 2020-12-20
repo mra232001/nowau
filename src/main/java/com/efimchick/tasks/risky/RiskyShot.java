@@ -17,28 +17,27 @@ public class RiskyShot {
         this.roulette = roulette;
     }
 
-    public void handleShot()/*You may not add "throws" here*/ {
+    public void handleShot() throws IOException/*You may not add "throws" here*/ {
         // handle method call
         try {
             roulette.shot(input);
-        } catch (Exception e) {
-            if(e instanceof IOException){
-                throw new IllegalArgumentException("File is error", e);
-            }
-            else if(e instanceof  FileNotFoundException){
-                throw new IllegalArgumentException("File is missing", e);
-            }
-            else if((e instanceof ArithmeticException) || (e instanceof  NumberFormatException)){
+        } catch(FileNotFoundException e){
+            throw new IllegalArgumentException ("File is missing", e);
+        } catch(IOException e){
+                throw new IllegalArgumentException ("File is error", e);
+            } catch(ArithmeticException e){
                 new RiskyShot(input + 1, roulette);
+            }
+            catch(NumberFormatException e){
                 new RiskyShot(input + 2, roulette);
             }
-            else if(e instanceof UnsupportedOperationException){
+
+            catch(UnsupportedOperationException e){
 
             }
-            else{
-                throw new RuntimeException();
+            catch(Exception e){
+                throw new RuntimeException(e);
             }
-        }
 
     }
 }
