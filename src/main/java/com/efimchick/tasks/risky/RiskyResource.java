@@ -30,6 +30,11 @@ public class RiskyResource {
                 ioException.printStackTrace();
             }
         }
+        try {
+            resource.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 }
