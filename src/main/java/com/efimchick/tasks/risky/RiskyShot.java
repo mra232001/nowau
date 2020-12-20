@@ -23,10 +23,10 @@ public class RiskyShot {
             roulette.shot(input);
         } catch (Exception e) {
             if(e instanceof IOException){
-                throw new IllegalArgumentException("File error");
+                throw new IllegalArgumentException("File is error", e);
             }
             else if(e instanceof  FileNotFoundException){
-                throw new IllegalArgumentException("File is missing");
+                throw new IllegalArgumentException("File is missing", e);
             }
             else if((e instanceof ArithmeticException) || (e instanceof  NumberFormatException)){
                 new RiskyShot(input + 1, roulette);
