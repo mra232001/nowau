@@ -24,7 +24,7 @@ public class RiskyShot {
         } catch(FileNotFoundException e){
             throw new IllegalArgumentException ("File is missing", e);
         } catch(IOException e){
-                throw new IllegalArgumentException ("File is error", e);
+                throw new IllegalArgumentException ("File error", e);
             } catch(ArithmeticException e){
                 new RiskyShot(input + 1, roulette);
             }

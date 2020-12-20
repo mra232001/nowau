@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 public class RiskyShotTest {
 
     @Test
-    public void successfulShots() {
+    public void successfulShots() throws IOException {
         RussianRoulette[] roulettes = new RussianRoulette[]{
                 new RussianRoulette(0),
                 new RussianRoulette(1),
@@ -57,7 +57,7 @@ public class RiskyShotTest {
     }
 
     @Test
-    public void countShots() {
+    public void countShots() throws IOException {
         {
             final CountingRussianRoulette roulette = new CountingRussianRoulette();
             new RiskyShot(2, roulette).handleShot();
