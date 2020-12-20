@@ -3,6 +3,7 @@ package com.efimchick.tasks.risky;
 import com.efimchick.tasks.risky.util.CarelessResourceConsumer;
 
 import java.io.Closeable;
+import java.io.IOException;
 
 public class RiskyResource {
 
@@ -23,6 +24,11 @@ public class RiskyResource {
         try {
             careless.consume(input, resource);
         } catch (Exception e) {
+            try {
+                resource.close();
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
         }
 
     }
