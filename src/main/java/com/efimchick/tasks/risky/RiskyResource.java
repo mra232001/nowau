@@ -20,7 +20,10 @@ public class RiskyResource {
 
     public void handleCarelessConsuming()  /*You may not add "throws" here*/  {
         // handle method call
-        //careless.consume(input, resource);
+        try {
+            careless.consume(input, resource);
+        } catch (Exception e) {
+        }
 
     }
 }
